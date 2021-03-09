@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Level : MonoBehaviour
 {
-
     [SerializeField] float delayInSeconds = 2f;
 
     public void LoadStartMenu()
@@ -13,28 +12,27 @@ public class Level : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-
     public void LoadGame()
     {
         SceneManager.LoadScene("Game");
-        FindObjectOfType<GameSession>().ResetGame();
+        GameSession gameSession = FindObjectOfType<GameSession>();
+        if(gameSession!=null)
+        {
+            gameSession.ResetGame();
+        }      
+        
     }
-
-    
-
-
+        
     public void LoadGameOver()
     {
         StartCoroutine(WaitAndLoad());        
     }
 
 
-
     IEnumerator WaitAndLoad()
     {
         yield return new WaitForSeconds(delayInSeconds);
         SceneManager.LoadScene("Game Over");  
-
     }
         
 
@@ -42,7 +40,5 @@ public class Level : MonoBehaviour
     {
         Application.Quit();
     }
-
-
-    
+           
 }

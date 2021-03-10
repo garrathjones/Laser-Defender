@@ -50,6 +50,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -113,7 +115,7 @@ MonoBehaviour:
   scoreValue: 500
   minTimeBetweenShots: 0.7
   maxTimeBetweenShots: 2
-  projectileSpeed: -10
+  projectileSpeed: -5
   projectilePrefab: {fileID: 3530985755383236448, guid: 542b362671dc1cf4baa85b540b5da341,
     type: 3}
   deathVFX: {fileID: 6415920910421934905, guid: 3ab6a421b47eeb848b4d18a8a82072dd,
